@@ -1,0 +1,215 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Prompt;
+}
+
+body {
+    background-color: rgb(24, 6, 8);
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 14rem;
+    position: relative;
+
+    & .Card {
+        display: none;
+        position: absolute;
+        background-color: rgb(255, 255, 255);
+        max-width: 90vw;          
+        width: fit-content;       
+        padding: 2rem;            
+        top: -2.3rem;
+        z-index: 1;
+        animation: none;
+        box-shadow: 0px 0px 20px 10px rgba(0, 0, 0, 0.123);
+        word-break: break-word; 
+        text-align: center;
+        overflow-wrap: break-word;
+
+        & .detail {
+            display: flex;
+            flex-direction: column;
+            align-items: center; 
+            gap: 1rem;
+            text-align: center;
+            color: rgb(230, 40, 97);
+        
+            & h1 {
+                font-size: 2rem;
+            }
+        
+            & p {
+                color: brown;
+                max-width: 100%;
+                white-space: normal;
+            }
+        
+            & img {
+                width: 80px;
+                height: auto;
+            }
+        }      
+    }
+
+    & .letter {
+        position: relative;
+        width: 500px;
+        height: 230px;
+        background-color: aliceblue;
+
+        & .triangle {
+            position: absolute;
+            width: 500px;
+            height: 0px;
+            border-left: 250px solid transparent;
+            border-right: 250px solid transparent;
+            border-top: 130px solid rgb(220, 220, 220);
+        }
+
+        & .triangleOpen {
+            animation: none;
+            display: none;
+            position: absolute;
+            rotate: 180deg;
+            top: -9.35rem;
+            width: 500px;
+            height: 0px;
+            border-left: 250px solid transparent;
+            border-right: 250px solid transparent;
+            border-top: 150px solid rgb(220, 220, 220);
+        }
+
+        & img {
+            display: none;
+            animation: none;
+            width: 70%;
+            position: absolute;
+            left: 4.6rem;
+            top: -60px;
+        }
+    }
+
+    & .Try-click {
+        cursor: pointer;
+        margin-top: 3rem;
+        padding: 0.5rem 2rem;
+        font-size: 2rem;
+        border-radius: 15px;
+        font-weight: bold;
+        background-color: rgb(212, 30, 67);
+        border: none;
+        color: rgb(255, 255, 255);
+    }
+}
+
+.Try-click:hover {
+    transform: scale(103%);
+    transition: 0.2s ease-in-out;
+    background-color: rgb(24, 6, 8);
+    border: 1px solid rgb(212, 30, 67);
+    color: rgb(255, 32, 76);
+}
+
+.change:hover {
+    transform: scale(102%);
+    transition: 0.5s ease;
+}
+
+@keyframes OpenLetter {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes CloseLetter {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes FadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes FadeOut {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .container {
+      margin-top: 14rem;
+  
+      & .Card {
+        padding: 1rem;
+  
+        & .detail {
+          & h1 {
+            font-size: 1.4rem;
+          }
+  
+          & p {
+            font-size: 0.9rem;
+          }
+  
+          & img {
+            width: 60px;
+          }
+        }
+      }
+  
+      & .letter {
+        width: 90vw;
+  
+        & .triangle {
+            width: 90vw;
+            border-left: 45vw solid transparent;
+            border-right: 45vw solid transparent;
+            border-top-width: 100px;
+        }
+
+        & .triangleOpen {
+            width: 90vw;
+            border-left: 45vw solid transparent;
+            border-right: 45vw solid transparent;
+            border-top-width: 100px;
+            margin-top: 3.2rem;
+        }
+  
+        & img {
+          left: 15%;
+          width: 70%;
+        }
+      }
+  
+      & .Try-click {
+        font-size: 1.4rem;
+        padding: 0.5rem 1.5rem;
+      }
+    }
+  }
